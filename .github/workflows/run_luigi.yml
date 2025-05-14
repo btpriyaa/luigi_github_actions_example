@@ -36,4 +36,4 @@ jobs:
       run: pytest tests
 
     - name: Run Luigi Task
-      run: luigi --module luigi_pipeline.tasks PrintDateTask --local-scheduler
+      run: PYTHONPATH=. luigi --module luigi_pipeline.tasks PrintDateTask --local-scheduler
