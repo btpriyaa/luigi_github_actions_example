@@ -1,5 +1,7 @@
-import luigi
 import datetime
+
+import luigi
+
 
 class PrintDateTask(luigi.Task):
     date = luigi.DateParameter(default=datetime.date.today())
@@ -8,5 +10,5 @@ class PrintDateTask(luigi.Task):
         return luigi.LocalTarget(f"output/date_{self.date}.txt")
 
     def run(self):
-        with self.output().open('w') as f:
+        with self.output().open("w") as f:
             f.write(f"Today's date is {self.date}\n")
